@@ -1,0 +1,188 @@
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+#dropper {
+    height: 75vh;
+    overflow: hidden;
+    position: relative;
+    top: 5%;
+    width: 96vw;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB) no-repeat;
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+   
+    color: white;
+
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes borders {
+    0% {
+        border-top: 1px dotted transparent;
+    }
+
+    50% {
+        border-top: 19px dotted transparent;
+    }
+
+    100% {
+        border-top: 1px dotted transparent;
+    }
+}
+
+.nav {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 0.5em 0em;
+    letter-spacing: 1vw;
+    width: 100%;
+    z-index: 99;
+    transition: 0.5s;
+    height: 40px;
+}
+
+.full {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    animation: opp linear 0.9s infinite;
+}
+
+@keyframes opp {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+div#vgg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: repeat;
+    transition: 0.7s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: blur(12px);
+    opacity: 0.6;
+}
+.mid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
+
+
+
+ol#lissy {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    counter-reset: item;
+    height: inherit;
+    overflow: scroll;
+}
+
+.title::after {
+    content: counter(item);
+    position: relative;
+    left: 5px;
+}
+
+#lissy>li.item {
+    float: left;
+    margin: 5px 5px;
+    counter-increment: item;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.58), 0 2px 10px 0 rgba(0, 0, 0, 0.83);
+    text-align: center;
+    background: #000000a6;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.imm>img {
+    width: 200px;
+    height: 200px;
+    padding: 0.5rem;
+    border-radius: 12px;
+ 
+    transition: 0.5s;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0ae;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+}

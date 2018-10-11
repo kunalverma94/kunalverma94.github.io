@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+        #cw {
+            position: fixed;
+            z-index: -1;
+        }
+    </style>
+    <script>
+    var cc;
+    var c ;
+    const m = { x: 0, y: 0 };
+    var a = [];
+
+    window.onload = function () {
+        set();
+        for (var i = 0; i <1    ; i++) {
+            a.push(  new obj() );
+        }
+    }
+    window.onresize = function () {
+        resize();
+    }
+    window.onmousemove = function (e) {
+        m.x = e.clientX;
+        m.y = e.clientY;
+    }
+    function set() {
+         cc = document.getElementById("cw");
+         c = cc.getContext('2d');
+        cc.height = innerHeight;
+        cc.width = innerWidth;
+        c.strokeStyle = "red";
+        c.fillStyle = "red";
+        c.lineWidth =2;
+            anim();
+
+    }
+    function resize() {
+        cc.height = innerHeight;
+        cc.width = innerWidth;
+    }
+
+    function obj()
+    {
+        this._x = 1;
+        this._y = innerHeight / 2;
+        this._c = "red";
+        this._s = 0.05;
+        this._dx = 0;
+        this._xx = 5;
+        this._old = { x: 0, y: 0 };
+        this.x =0;
+        this.y = innerHeight/ 2;
+        this.dx=0;
+        this.r = Math.random()*30+10;
+        this.old = { x: 0, y: 0 };
+        this.color = gc();
+        this.speed = Math.random() * 0.5 + 0.5;
+        this.tt = Math.random();
+        this.sx = 0;
+        this.sy = innerHeight / 2;
+        this.drw = function () {
+
+
+            if (this._x >= innerWidth || this._x <= 0) {
+                this._xx = -this._xx;
+            }
+            c.lineWidth = 5;
+            this._dx += this._s;
+            this._x += this._xx;
+            this._y = Math.sin(this._dx) * 60 + innerHeight * this.tt;
+            c.moveTo(this._old.x, this._old.y);
+            c.lineTo(this._x, this._y);
+            c.stroke();
+            this._old = { x: this._x, y: this._y };
+            c.beginPath();
+            c.lineWidth = 4; c.beginPath();
+            c.fillStyle = this.color;
+            c.strokeStyle = this.color;
+            this.dx += this.speed;
+            this.old = { x: this.x, y: this.y };
+            this.x = Math.cos(this.dx) * this.r +this._x;
+            this.y = Math.sin(this.dx) * this.r +this._y;
+            c.moveTo(this.old.x, this.old.y);
+            c.lineTo(this.x, this.y);
+            c.stroke();
+            c.fill();
+            c.beginPath();
+            grid()
+            c.beginPath();
+        
+
+        };
+
+
+
+    }
+    function r() {
+        return Math.random()*4;
+    }
+    function gc() {
+        var s = "0123456789ABCDEF";
+        var c = "#";
+        for (var i = 0; i < 6; i++) {
+            c += s[Math.ceil(Math.random() * 15)]
+        }
+        return c
+    }
+
+    function anim()
+    {
+
+        requestAnimationFrame(anim);
+       
+        c.fillStyle = "rgba(0,0,0,0.05)";
+        c.fillRect(0, 0, innerWidth, innerHeight);
+        //c.clearRect(0, 0, innerWidth, innerHeight);
+       
+        a.forEach(function (e)
+        {
+            e.drw();
+
+        });
+    }
+
+    function grid() {
+        c.lineWidth = 0.5;
+        c.strokeStyle = "white";
+        c.moveTo(innerWidth/2,0);
+        c.lineTo(innerWidth / 2, innerHeight);
+        c.moveTo(0, innerHeight/2);
+        c.lineTo(innerWidth, innerHeight / 2);
+        c.stroke();
+        c.strokeStyle = "red";
+        c.beginPath();
+
+    }
+    </script>
+</head>
+<body>
+    <canvas id="cw"></canvas>
+ 
+</body>
+</html>

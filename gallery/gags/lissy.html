@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>lissy</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>Minimun JssCss</h1>
+    <div>
+        <ol class="outer"></ol>
+
+    </div>
+   
+    <div>
+        <h1 id="sel"></h1>
+    </div>
+    <style>
+        @keyframes xx {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .mod:checked::after {
+            position: absolute;
+            opacity: 1;
+            background: black;
+            border-radius: 2px;
+            transition: 0.5s;
+            content: counter(item);
+            -moz-animation: xx linear 2s infinite;
+            -o-animation: xx linear 2s infinite;
+            -webkit-animation: xx linear 2s infinite;
+            animation: xx linear 2s infinite;
+            color: white;
+            text-align: center;
+            height: 25px;
+            line-height: 2;
+            width: 70px;
+            top: -1.5px;
+        }
+
+        .mod {
+            position: relative;
+            height: 0;
+            width: 0;
+        }
+
+
+        .outer {
+            display: inline-block;
+            LIST-STYLE: NONE;
+            display: inline-block;
+            counter-reset: item;
+        }
+
+        li.inner {
+            float: left;
+            margin: 15px 34.5px 15px 34.5px;
+        }
+
+        .mod:before {
+            content: '';
+            counter-increment: item;
+            position: absolute;
+            height: 22px;
+            width: 69px;
+            background: rgba(0, 128, 0, 0.4392156862745098);
+            border-radius: 1px;
+        }
+    </style>
+    <script>
+    var t = document.getElementsByClassName("mod");
+
+    var _c = 0;
+    window.onload = function () {
+        var g = document.createElement("input");
+        g.setAttribute("type", "radio");
+        g.setAttribute("name", "rbl");
+        g.setAttribute("class", "mod");
+
+        g.setAttribute("id", "dd");
+        var ii = document.createElement("li");
+       ii.setAttribute("class", "inner");
+       ii.appendChild(g.cloneNode(true));
+        for (var i = 0; i < 30; i++) {
+            document.querySelector(".outer").appendChild(ii.cloneNode(true));
+        }
+        setInterval(function () {
+            if (_c == t.length) {
+                _c = 0;
+            }
+
+            t[_c].checked = true;
+            _c++;
+
+        },300 );
+
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script>
+        var c, ctx;
+        var file; 
+        window.onload = function () {
+            init();
+        };
+     
+        function init() {
+         document.getElementById("hd").value = window.outerHeight;
+         document.getElementById("wd").value = window.outerWidth;
+            c = document.getElementById("cc");
+            ctx = c.getContext('2d');
+            c.height = "360";
+            c.width = "640";
+           
+            c.ondragleave = function (e) {
+                stp(e);
+            };
+            c.ondrop = function (e) {
+                stp(e);
+                fread(e.dataTransfer.files[0]);
+            };
+            c.ondragover = function (e) {
+                stp(e);
+            };
+            document.getElementById("inn").onchange = function (e) {
+                fread(this.files[0]);
+            };
+        
+            document.getElementById("open").onclick = function ()
+            {
+                document.getElementById('inn').click();
+
+            }
+
+            document.getElementById("op").onclick = function ()
+            {
+                var dd = [];
+                var xda = ctx.getImageData(0, 0, c.width, c.height);
+                dd = xda.data;
+                dd.reverse();             
+                ctx.putImageData(xda, 0, 0);
+                
+            }
+
+            document.getElementById("sv").onclick = function () {
+               
+                var lnk = document.createElement("a");
+                lnk.setAttribute('download', "dd.png");
+                lnk.setAttribute('href', c.toDataURL("image/jpeg"));
+                lnk.click();
+
+            }
+        }
+        function stp(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.target.className = e.type == "dragover" ? "drags" : "";
+        }
+        function fread(f)
+        {
+            file = f;
+            var fr = new FileReader();
+            fr.onloadend = function (e) {         
+                var img = new Image();
+                img.src = e.target.result;
+          
+                img.onload = function () {
+                   
+                    c.height = document.getElementById("hh").value = img.height;
+                    c.width = document.getElementById("ww").value = img.width;
+                    ctx.drawImage(img, 0, 0);
+                }
+            
+            };
+            fr.readAsDataURL(f);
+
+        }
+    </script>
+    <style>
+        html, body {
+    height: 100%!important;
+    width:100%!important;
+}
+        #cc {
+        border: dashed 3px;
+        border-color:#808080;
+        border-radius :5px ;
+       transition:3s;
+       width:100%!important;
+        }
+
+        .drags {
+       border-color:#ff6a00!important;
+             }
+
+        input {
+    width: 50%!important;
+}
+
+        .co {
+        grid-template:"1fr 1fr"
+        }
+    </style>
+</head>
+
+<body>
+ https://api-v2v3search-0.nuget.org/query?q=anti&prerelease=false
+ <div class="row" style="width: 100%!important;">
+     <div class="col-md-6">
+         <canvas id="cc"></canvas>
+     </div>
+ <div class="col-md-5">
+     <div>
+         <h2>Control</h2>
+         <div class="form-horizontal">
+             <div class="form-group">
+                 <label class="control-label col-md-2" >Height:</label>
+                 <div class="col-md-10">
+                     <input type="number" readonly class="form-control" id="hh">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="control-label col-md-2" >width:</label>
+                 <div class="col-md-10">
+                     <input type="number" readonly class="form-control" id="ww">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+                     <input type="file" id="inn" style="display:none" />
+                     <button class="btn btn-default" id="open" style="    width: 50%;">Open</button>
+                 </div>
+             </div>
+             <hr />
+             <h2>Device</h2>
+             <div class="form-group">
+                 <label class="control-label col-md-2" >Height:</label>
+                 <div class="col-md-10">
+                     <input type="number" readonly class="form-control" id="hd">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="control-label col-md-2" >width:</label>
+                 <div class="col-md-10">
+                     <input type="number" readonly class="form-control" id="wd">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+              
+                     <button class="btn btn-default" id="op" style="    width: 50%;">Invert</button>
+                     <button class="btn btn-default" id="sv" style="    width: 50%;">save</button>
+
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+ </div>
+ 
+    <a id="qq"> ddedfe</a>
+  
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>    
+        var cn;
+        var c;
+        var ar = [];
+        window.onload = function () {
+            cn = document.getElementById("cc");
+            cn.height = innerHeight;
+            cn.width = innerWidth;
+            c = cn.getContext('2d');
+            c.strokeStyle = "white";
+            c.lineWidth = 1;
+            init();
+        }
+        function init() {
+            for (var i = 0; i < 121; i++) {
+                var t=new ob(Math.random()*innerWidth,Math.random()*innerHeight,9,gc());
+                ar.push(t)
+            }
+            an();
+        }
+            function gc() {
+            var s = "0123456789ABCDEF";
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += s[Math.ceil(Math.random() * 15)]
+            }
+            return c
+        }
+        function ob(x,y,s,cc)
+        {
+            this.x = x;
+            this.y = y;
+            this.sx = 1;
+            this.sy = 1;
+            this.cc = cc;
+            this.l = { x: 0, y: 0 };
+
+            this.dr = function ()
+            {
+                var rr = Math.random() * 9;
+                this.l = { x: this.x, y: this.y };
+                //if (this.x > innerWidth || this.x < 0) {
+                    
+                //    this.x = Math.random() * innerWidth;
+                //    c.strokeStyle = "rgba(0,0,0,0)";
+                //}
+                //if (this.y > innerHeight || this.y < 0) {
+                //    this.y = Math.random() * innerHeight;
+                //    c.strokeStyle = "rgba(0,0,0,0)";
+                //}
+               
+                if (this.y >= innerHeight || this.y<= 0) {
+                    this.sy = -this.sy;
+                }
+                if (this.x >= innerWidth || this.x<=0) {
+                    this.sx = -this.sx;
+                }
+             
+                this.x += this.sx;
+                this.y += this.sy;
+                c.beginPath();
+                c.moveTo(this.l.x, this.l.y);
+             
+                c.lineTo(this.x, this.y);
+                c.closePath();
+                c.stroke(); c.beginPath();
+                c.strokeStyle = "white";
+
+                //c.strokeStyle = this.cc;
+            }
+        }
+
+        function an()
+        {
+            requestAnimationFrame(an);
+            c.fillStyle = "rgba(0,0,0,0.05)";
+            c.fillRect(0, 0, cn.width, cn.height);
+            ar.forEach(function (e)
+            {
+                e.dr();
+
+            });
+
+        }
+    </script>
+    <style>
+          #cc {
+    position: fixed;
+
+    
+    z-index: -1;
+}
+        body, html {
+       margin:0;
+             }
+    </style>
+</head>
+<body>
+    <canvas id="cc"></canvas> 
+    <div class="conatainer"></div>
+</body>
+</html>

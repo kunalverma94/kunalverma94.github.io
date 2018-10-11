@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>    
+        var cn;
+        var c;
+        var ar = [];
+        window.onload = function () {
+            cn = document.getElementById("cc");
+            cn.height = innerHeight;
+            cn.width = innerWidth;
+            c = cn.getContext('2d');
+            c.strokeStyle = "white";
+            c.lineWidth = 1;
+            init();
+        }
+        function init() {
+            for (var i = 0; i < 1000; i++) {
+                var t=new ob(Math.random()*innerWidth,Math.random()*innerHeight,2,gc());
+                ar.push(t)
+            }
+            an();
+        }
+            function gc() {
+            var s = "0123456789ABCDEF";
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += s[Math.ceil(Math.random() * 15)]
+            }
+            return c
+        }
+        function ob(x,y,s,cc)
+        {
+            this.x = x;
+            this.y = y;
+            this.sx = 0.51;
+            this.sy = 0.51;
+            this.cc = cc;
+            this.l = {x:0,y:0};
+            this.dr = function ()
+            {
+              
+                this.l = { x: this.x, y: this.y };
+                if (this.x > innerWidth || this.x < 0) {
+                    
+                    this.x = Math.random() * innerWidth;
+                    c.strokeStyle = "rgba(0,0,0,0)";
+                }
+                if (this.y > innerHeight || this.y < 0) {
+                    this.y = Math.random() * innerHeight;
+                    c.strokeStyle = "rgba(0,0,0,0)";
+                }
+                if (this.x > innerWidth / 2 ) {
+                    this.x += this.sx;
+                }
+                
+                else {
+                    this.x -= this.sx;
+                }
+                if (this.y > innerHeight / 2 ) {
+                   // this.y += this.sy;
+                }
+                else {
+                   // this.y -= this.sy;
+                }
+                c.beginPath();
+                c.moveTo(this.l.x, this.l.y);
+             
+                c.lineTo(this.x, this.y);
+                c.closePath();
+                c.stroke(); c.beginPath();
+                c.strokeStyle = "white";
+
+                //c.strokeStyle = this.cc;
+            }
+        }
+        window.onresize = function ()
+        {
+            cn.height = innerHeight;
+            cn.width = innerWidth;  
+            ar.forEach(function (e)
+            {
+                e.x = Math.random() * innerWidth;
+                e.y = Math.random() * innerHeight;  
+
+            });
+
+        }
+        function an()
+        {
+            requestAnimationFrame(an);
+            c.fillStyle = "rgba(0,0,0,0.05)";
+            c.fillRect(0, 0, cn.width, cn.height);
+            ar.forEach(function (e)
+            {
+                e.dr();
+
+            });
+
+        }
+    </script>
+    <style>
+          #cc {
+    position: fixed;
+
+    
+    z-index: -1;
+}
+      body, html {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+      p.content::selection {
+    color: red;
+    background: yellow;
+}
+  .content {
+    /* border: solid 5px; */
+    border-radius: 14px;
+    padding: 2em;
+    margin:0;   
+    background-color: rgba(33, 150, 243, 0.6);
+}
+    .head {
+    background: rgba(33, 150, 243, 0.6);
+    font-size: 55px;
+    padding: 1em;
+    border-radius: 0px 0px 10px 10px;
+    word-spacing: 39px;
+    font-weight: bold;
+    letter-spacing: 28px;
+    line-height: normal;
+}
+     .container {
+    padding: 2em;
+    color: white;
+    line-height: 28px;
+    font-size: 20px;
+    font-family: monospace;
+    text-align:center;
+    transition:0.6S;
+
+}
+   .container.top {
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0;
+}
+
+     .container.sec {
+    padding-top: 0%!important;
+}
+  .list {
+    margin: 0;
+    margin-top: -3%;
+    width: 95%;
+    float: left;
+    /* padding: 0; */
+    list-style: square;
+}
+     .list>li {
+    float: left;
+    margin: 10px 30px;
+}
+     li>a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+.container.sec {
+    padding-bottom: 0em!important;
+}
+
+.container.sec {
+    padding-top: 0%!important;
+}
+    </style>
+</head>
+<body>
+    <canvas id="cc"></canvas> 
+    <div class="container top">
+        <div class="head">
+            STAR EFFECT
+        </div>
+    </div>
+    <div class="container sec">
+            <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero aperiam temporibus, earum nesciunt minima harum nostrum sequi. Distinctio ducimus soluta in, perspiciatis exercitationem impedit optio sit ab doloribus nostrum odit dolore, provident a labore suscipit fugit nulla excepturi! Magnam aliquid est eos esse? Quos obcaecati aspernatur nulla. Quasi sapiente ea accusamus est, ratione dignissimos. In fugiat, ea? Minus ducimus temporibus quos dolorum rerum laborum quis perspiciatis quam voluptatem laboriosam, aliquam sequi. Eligendi laboriosam eaque sapiente consectetur placeat culpa at, molestias quibusdam ullam consequatur ratione dignissimos veritatis magni, iure debitis ab unde deleniti iste minus voluptas optio! Minus sint accusamus ut? Earum quaerat beatae fugit, accusantium. Repellat voluptas delectus architecto dolor quo, maxime neque itaque accusantium provident ipsa atque esse suscipit quibusdam porro qui temporibus quos molestias quod accusamus debitis corrupti libero. Fuga incidunt explicabo dolorem delectus cum amet reiciendis, recusandae! Eligendi at saepe magnam ea mollitia cumque, aliquid, repudiandae tempora nesciunt accusamus ut aliquam quibusdam, totam odit! Iste accusantium officiis iusto, consequatur adipisci dicta, fuga accusamus fugiat modi suscipit molestias expedita rem, blanditiis repudiandae fugit dolore enim esse! Quidem libero, quas alias. Beatae possimus eum impedit in aliquid, cupiditate ipsa voluptatem. Molestiae, error, quam. Dolorum velit explicabo laboriosam, provident corrupti neque consectetur. Asperiores cum iste libero, quasi unde assumenda non aliquid, officia, eius accusamus expedita dicta hic atque praesentium dignissimos esse animi neque ad ut, error. Voluptas, sed consequuntur ipsam consectetur illum! Excepturi neque quae, corporis asperiores, voluptatibus dolores quisquam impedit minima ex natus, pariatur aliquid, odio id quod aspernatur laboriosam praesentium iusto consectetur harum earum mollitia! Non et numquam minus nam quod temporibus ab accusamus a nemo assumenda asperiores omnis aspernatur labore animi recusandae aliquam beatae, similique cumque iusto enim optio saepe? Quo maiores ab, beatae ad officiis error delectus explicabo vel eveniet omnis dicta reiciendis sed perferendis, repellat. Aperiam corporis unde beatae in atque iusto quas, error aut magnam nobis, dignissimos necessitatibus voluptatem nemo provident quibusdam. Nemo quis illo, incidunt voluptatum dolor tempora sed laboriosam libero quaerat, quod labore officia hic, eum reiciendis commodi. Blanditiis nobis, ut minus eveniet est porro, tempore, at laborum architecto, vitae amet id nesciunt. Cum beatae sapiente saepe ducimus nemo pariatur quas delectus quos et vel, nisi, impedit deserunt sint incidunt earum. Dolorum aspernatur recusandae quos facilis a itaque ipsum ad vitae non nesciunt veritatis iusto eaque porro quod ullam, eum dicta? Quisquam rerum tempora, eligendi quibusdam. Delectus eaque voluptatibus sequi cumque maiores, praesentium ea nemo exercitationem autem eligendi reprehenderit quo odit nihil, vero! Velit ratione delectus ipsa tenetur eligendi labore temporibus minus ut quam, totam cupiditate sit iste, esse quaerat perferendis ullam harum necessitatibus doloremque magnam. Ratione, quo, nemo enim, dolore libero eius labore consequatur fugiat optio qui reprehenderit iusto quam nihil alias. Commodi, tenetur, doloremque? Tenetur, suscipit, aperiam. Cum aliquam, pariatur aut rem nam, non nobis saepe nesciunt tempora quia consequuntur culpa nemo sapiente nulla tempore aspernatur perferendis accusantium. Sit saepe beatae dolorum minus omnis, quam deleniti velit, iusto rerum molestias provident! Error dicta, qui magnam corrupti magni a dolore quae quaerat soluta dignissimos rem commodi, sint sapiente doloremque quibusdam vitae non laboriosam placeat! Adipisci sapiente ut illo perferendis nesciunt quod beatae, temporibus, repudiandae omnis fugit repellat quia eligendi eos deleniti! Consequuntur excepturi esse atque inventore explicabo ut dignissimos laborum sunt ipsum, pariatur voluptatibus at quasi mollitia qui nam, voluptatum eveniet ad iusto deleniti. Illo, quisquam iste maxime officiis recusandae rerum facilis temporibus cupiditate placeat accusamus autem porro suscipit quia similique eius. Modi quisquam sed error, provident dolores qui! Iure nemo laborum hic obcaecati minus nostrum quae, ratione sit, fugit expedita debitis minima vel distinctio eaque cupiditate placeat facere quam labore animi amet quidem optio! Labore quibusdam repudiandae perspiciatis, qui porro, suscipit neque praesentium laudantium enim. Consectetur soluta sit, aut maiores ullam ab nemo. Iusto aperiam perferendis ex ratione placeat ea inventore deserunt eum quidem quasi itaque illo ipsa qui necessitatibus nam natus voluptate pariatur repellat, fugiat, voluptatibus tempora est? Explicabo quia iusto, quae fugit voluptatibus delectus doloribus nesciunt, enim ipsa id veniam ut ullam cupiditate porro tempore asperiores eaque blanditiis! Sit consectetur et culpa non itaque neque incidunt ducimus, fugit porro dolorum illum hic, distinctio possimus, repellat maiores reiciendis nam sint voluptate eligendi ipsam officiis commodi aspernatur impedit modi. Qui aut voluptates earum. Delectus dolore illo corporis tempora maxime accusamus ullam, ab ipsam hic. Quos eius minima commodi animi officiis nesciunt asperiores similique impedit eos pariatur consequatur odit fuga necessitatibus deserunt, nam eum reprehenderit, beatae ab unde accusamus, dolores praesentium sit atque consectetur. Voluptate nesciunt explicabo reiciendis, rerum adipisci veniam tempora cupiditate quos nemo sapiente quas dolor numquam maxime itaque, distinctio minima odit quo sed eveniet earum. Nihil suscipit modi tempore dolores facilis accusantium voluptatibus similique vel, nesciunt temporibus asperiores sequi, quam perferendis vitae sint aliquid possimus error? Error, sed soluta iste blanditiis expedita. Perferendis qui voluptatibus, iste adipisci blanditiis et iure in quo mollitia, nobis hic dolore ab. Libero facilis nisi ex aspernatur dolores! Perspiciatis amet porro in, voluptatem alias excepturi culpa ratione, libero. Illo aspernatur distinctio adipisci similique cum in suscipit ullam culpa. Quisquam quo autem animi, recusandae commodi, a, optio non adipisci eligendi ullam ducimus soluta totam libero blanditiis voluptate deserunt quam et dolor perferendis corporis placeat facilis illum. Accusamus assumenda deleniti soluta, dignissimos amet asperiores, reprehenderit pariatur aut placeat facere doloremque ratione est. Corporis cum rem, a officiis alias blanditiis sequi facilis dignissimos eligendi quibusdam mollitia architecto eius, reprehenderit molestiae assumenda numquam in iste expedita nobis sit tempora necessitatibus saepe. Aliquam corrupti eum consequuntur est, eius libero, cupiditate sed blanditiis. Iste ut, hic harum maiores, corrupti architecto quidem explicabo veniam, inventore illo unde ratione cupiditate, delectus quaerat non. Facilis molestias excepturi, sint ad deserunt reprehenderit temporibus nulla commodi repudiandae blanditiis eius tempore fuga rem distinctio harum magnam dolorem. A modi, odio eligendi blanditiis. Accusamus enim unde nulla quam dolore quae sint, sapiente dolorem. Ut, eius. Impedit placeat accusantium, ullam rem quidem, error reprehenderit alias ut ea, ratione veniam explicabo, laudantium adipisci ducimus sunt fugiat. Doloribus saepe deleniti iusto mollitia ex, cumque laudantium nihil sapiente, aspernatur vitae libero aliquid temporibus perferendis hic ipsum harum quisquam debitis fugit accusantium labore nemo porro tempora adipisci? Fugiat, sit id animi quam iure, architecto!
+            </p>
+
+    </div>
+    <div class="container tec">
+           <p>SOME OTHER LINKS</p>
+            <ul class="list content">
+                <li><a href="/aa.html">color circles</a></li>
+                <li><a href="/bb.html">Dark circles</a></li>
+                <li><a href="/cc.html">Beyblade</a></li>
+                <li><a href="/dd.html">Matrix</a></li>
+                <li><a href="/ee.html">Cone</a></li>
+                 <li><a href="/ff.html">nucke</a></li>
+                <li><a href="/DND.html">DND</a></li>
+            </ul>
+    </div>
+</body>
+</html>

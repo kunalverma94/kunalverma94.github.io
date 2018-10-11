@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script> 
+        var cc;
+        var c;
+        var miss = true;
+       var fl=false;
+        var tr = true;
+        const score = {
+            hit: 0,
+            miss: 0,
+        };
+        var bno = 1;
+ document.addEventListener('visibilitychange', function ()
+        {
+            if (document.visibilityState == "hidden")
+            {
+                tr = false;
+            }
+
+        });
+        const m = { x: innerWidth / 2, y: innerHeight / 2 };
+        var balary = [];
+        var bb = new bar(30, innerHeight / 2, 20, 150,"brown")
+        window.addEventListener('mousemove', event=> {
+            m.x = event.clientX;
+                m.y = event.clientY
+        }
+      );
+      window.onkeypress=function  (e)
+      {
+
+         if(e.key == "p")
+         {
+             tr = !tr;
+ 
+
+          
+          };
+          if (!fl)
+          {
+              if (e.key == "Enter") {
+                  init();
+                  fl=true;
+              }
+
+          }
+          if (e.key == "r")
+          {
+              if (!miss) {
+                  cc.style.display = "";
+                  miss = true;
+                  var r = 20
+                  var x = Math.random() * (innerWidth / 2 - 2 * r) + r + 150;
+                  var y = Math.random() * (innerHeight / 2 - 2 * r) + r;
+                  balary[0] = (new ball(x, y, "white", 12, 2, 20));
+                  init();
+              }
+
+
+          }
+      }  
+        window.onload = function () {
+
+            for (var i = 0; i < bno; i++) {
+                var r = 20
+                var x = Math.random() * (innerWidth / 2 - 2 * r) + r+150;
+                var y = Math.random() * (innerHeight / 2 - 2 * r) + r;
+                balary.push(new ball(x, y, "white", 12, 2, 20));
+            }
+            cc = document.getElementsByTagName("canvas")[0];
+            c = cc.getContext("2d");
+       
+          
+            
+            
+        }
+        function gc() {
+            var s = "0123456789ABCDEF";
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += s[Math.ceil(Math.random() * 15)]
+            }
+            return c
+        }
+        window.onresize = function () {
+        }
+        function Field() {
+            cc.height = innerHeight;
+            cc.width = innerWidth;
+
+            c.fillStyle = "black";
+            c.fillRect(0, 0, innerWidth, innerHeight);
+            c.strokeStyle = "red";
+            c.rect(0, 0, innerWidth, innerHeight);
+            c.lineWidth = 20;
+            c.stroke();
+            c.beginPath();
+            c.moveTo(0, 0);
+            c.strokeStyle = "black";
+            c.lineWidth = 80;
+            c.lineTo(0,innerHeight);
+            c.stroke();
+            c.beginPath();
+             c.moveTo(40,0)
+            c.lineWidth = 1;
+            c.strokeStyle = "white";
+            c.lineTo(40, innerHeight);
+            c.stroke();
+            c.beginPath();
+            c.moveTo(innerWidth/2, 0);
+            c.lineTo(innerWidth / 2, innerHeight);
+              c.stroke();
+            c.beginPath();
+            c.arc(innerWidth / 2, innerHeight / 2, 50, 0, Math.PI * 2);
+            c.arc(0, innerHeight / 2, 200, 0, Math.PI * 2);
+            c.arc(innerWidth, innerHeight / 2, 200, 0, Math.PI * 2);
+
+            c.stroke();
+            c.moveTo(0, innerHeight / 2);
+            c.lineTo(innerWidth, innerHeight / 2)
+            c.stroke();
+            
+        }
+        function init() {
+            start();
+        }
+        function start() {
+           
+            if (miss) {
+                requestAnimationFrame(start);
+            }
+            else {
+                score.miss += 1;
+                c.fillStyle = "white";
+                c.font = "30px Arial";
+                c.fillText("Your Hits: " + score.hit + " at miss " + score.miss + ".... Press 'R' to continue ",innerWidth/2, innerHeight/2);
+               // cc.style.display = "none";
+
+            }
+            
+            c.beginPath();
+            c.clearRect(0, 0, innerWidth, innerHeight);
+            Field();
+            balary.forEach(function (a)
+            {
+                a.move();
+
+            });
+           
+           bb.dra();
+        }
+        function toggleFullScreen(videoElement) {
+            if (!document.mozFullScreen && !document.webkitFullScreen) {
+            if (videoElement.mozRequestFullScreen) {
+                videoElement.mozRequestFullScreen();
+            } else {
+                videoElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+            } else {
+            if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else {
+                document.webkitCancelFullScreen();
+            }
+            }
+        }
+        
+        function ball(x, y, cc,dx,dy,r) {
+
+            this.x = x;
+            this.y = y;
+            this.cc = cc;
+            this.dx = dx;
+            this.dy = dy;
+            //this.l = {x:0,y:0};
+            this.r = r;
+            this.move = function ()
+            {
+              
+                if (tr) {
+                    this.x += this.dx;
+                    this.y += this.dy;
+                }
+                else {
+                    c.fillStyle = "white";
+                    c.font = "30px Arial";
+                    c.textAlign = "center";
+                    c.strokeText("Your Hits: " + score.hit + " at miss " + score.miss, innerWidth / 2, innerHeight / 4);
+                    c.strokeText("Paused", innerWidth / 2, innerHeight / 3);
+                    c.strokeText("Press P to continue", innerWidth / 2, innerHeight / 2.5);
+
+                }
+                //this.l = { x: this.x, y: this.y };
+                if (this.x + this.r > innerWidth ) {
+                    this.dy = (Math.random() < 0.4 ? -1 : 1) * Math.random() *17 + 2;
+                    this.dx = -this.dx;
+                    this.cc = gc();
+
+                }
+                if (this.y + this.r > innerHeight || this.y - this.r < 0) {
+
+                    this.cc = gc();
+
+                    this.dy = -this.dy;
+
+                }
+                if (this.x - this.r < bb.x+bb.w) {
+                    var t=this.y -this.r ;
+                    var s = m.y-50;
+                    var u=m.y+bb.h+20;
+                    if (t>=s && t<= u) {
+                        this.cc = gc();
+
+                        this.dx = -this.dx;
+                        this.dy = (Math.random() < 0.5 ? 1 : -1) * Math.random() * 10 + 2;
+                        score.hit += 1;
+                        bb.cc = this.cc;
+                        if (score.hit%10==0)
+                        {
+                            this.dx = Math.sign(this.dx) * (Math.abs(this.dx) + score.hit / 10);
+                        }
+                    }
+                    else {
+                        miss = false;
+                        c.fillStyle = "white";
+                        c.font = "30px Arial";
+                        c.textAlign = "center";
+                        c.strokeText("Your Hits: " + score.hit + " at miss " + score.miss + ".... Press 'R' to continue ", innerWidth / 2, innerHeight / 3);
+                        document.getElementById("sum").innerHTML = ("Your Hits: " + score.hit + " at miss " + score.miss + "</br>Press 'R' to continue ");
+
+                    }
+                  
+                }
+               
+                c.fillStyle = this.cc;
+                c.strokeStyle = this.cc;
+                c.beginPath();
+                
+                c.arc(this.x, this.y, 23, 0, Math.PI * 2);
+                c.fill();
+            }
+
+
+        }
+        function bar(x, y,w,h,cc)
+        {
+            this.x = x;
+            this.y = m.y;
+            this.w = w;
+            this.h = h;
+            this.cc = cc;
+            this.dra = function ()
+            {
+                if (m.y + this.h >= innerHeight || m.y<=0) {
+                  
+                    c.fillStyle = this.cc;
+                    c.fillRect(this.x, this.y, this.w, this.h);
+                    return;
+
+                }
+                this.y = m.y;
+                c.fillStyle = this.cc;
+                c.fillRect(this.x, this.y, this.w, this.h);
+           
+               
+              
+
+            }
+        }
+    </script>
+    <style>
+   html, body, head {
+    margin: 0;
+    cursor: none;
+    height: 100%;
+    overflow: hidden;
+}
+
+        .bg {
+        background:url('/assets/images/bb.png') no-repeat;
+        position:absolute;
+        background-size:cover;
+        overflow:hidden;
+        height:100%;
+        width:100%;
+        z-index:-4;
+        opacity:0.7;
+        }
+        h1 {
+        color:white
+        }
+     .mm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px -2px 20px 6px #2196F3;
+    background: #00BCD4;
+    padding: 1rem;
+    border: solid 0.5px;
+    border-radius: 9px;
+    border-color: blueviolet;
+}
+    </style>
+</head>
+<body id="bbb">
+    <div class="bg"></div>
+   <div class="mm"> 
+       <h1 id="sum"><ul>
+           <li>
+               Hit Enter to start game .
+           </li>
+           <li>
+               P to pause.
+           </li>
+                        <li>
+                          R to Reset.
+                        </li>
+           </ul> </h1>
+ 
+   </div>
+  
+    <canvas id="cn" style="position:absolute;" >
+
+    </canvas>
+</body>
+</html>

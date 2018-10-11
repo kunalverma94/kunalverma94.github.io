@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="gallery.css" rel="stylesheet">
+    <title>Gallary</title>
+    <script>
+        var list=['astroids',
+        'atari',
+        'beyblade',
+        'colordots_',
+        'colordots_black',
+        'Cone',
+        'DND',
+        'lissy',
+        'matrix',
+        'molecule',
+        'pinball',
+        'random_shapes',
+        'random_shapes_mouse',
+        'sine',
+        'stars',
+];
+        window.onload = function () {
+
+    var template=document.getElementsByClassName("item")[0];
+                var _t=[];
+            for (const key in list) {
+                var _tmp=template.cloneNode(true);
+                _tmp.querySelector(".txt").innerHTML=list[key];
+                _tmp.querySelector("img").src="/gallery/"+list[key]+".jpg";
+                _tmp.querySelector("a").href="gags/"+list[key]+".html";
+                document.getElementById("lissy").appendChild(_tmp);
+            }
+            template.remove();
+            setTimeout(function () {
+               document.querySelector(".nav_text").classList.remove("mid");
+               document.querySelector(".nav").classList.remove("full");
+            }, 2000);
+            delete list;
+        }
+    function view(t) 
+    {
+        document.getElementById("vgg").style.backgroundImage="url('"+t.querySelector("img").src+"')";
+        
+    }
+        </script>
+</head>
+
+<body>
+    <div class="nav full" id="navbar" ondblclick="Fulltoggle()">
+        <div class="nav_text mid">
+            <i style="    font-size: 32px;font-family: serif;">G</i>allary
+        </div>
+    </div>
+    <div id="dropper">
+        <div id="vgg"></div>
+        <ol id="lissy">
+            <li class="item"  onmouseover="view(this)"  >
+               <a target="_blank">
+                    <div class="lay">
+                            <div class="title">Site</div>
+                       <div class="imm">
+                            <img   >
+                       </div>
+                       <div class="txt">
+                        </div>
+                    </div>
+               </a>
+            </li>
+           
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script >
+        function gc() {
+            var s = "0123456789ABCDEF";
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += s[Math.ceil(Math.random() * 15)]
+            }
+            return c
+        }
+        var oo = [];
+        window.onload = function () {
+            for (var i = 0; i < 2000; i++) {
+                var tt = new obj(Math.random() * (innerWidth - 40) + 20, Math.random() * (innerHeight - 40) + 20, 20, gc(), Math.random() * 5, i);
+                oo.push(tt)
+            }
+            ; const cn = document.getElementById("cn");
+            const ct = document.getElementById("cn").getContext('2d');
+            const ms = {
+                x: innerWidth / 2,
+                y: innerHeight / 2
+            };
+            addEventListener('mousemove', event=> {
+                ms.x = event.clientX;
+                ms.y = event.clientY
+            }
+            );
+            function obj(x, y, r, c, dd, nn) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.c = c;
+                this.dx = dd;
+                this.dy = dd;
+                this.dr = function () {
+                    ct.beginPath();
+                    if (this.y + this.r > innerHeight || this.y - this.r < 0) {
+                        this.dy = -this.dy
+                    }
+                    if (this.x + this.r > innerWidth || this.x - this.r < 0) {
+                        this.dx = -this.dx
+                    }
+                    this.y += this.dy;
+                    this.x += this.dx;
+                    ct.fillStyle = this.c;
+                    if (ms.x - this.x < 50 && ms.x - this.x > -50 && ms.y - this.y < 50 && ms.y - this.y > -50) {
+                        if (this.r < 20) {
+                            this.r += 1
+                        }
+                    } else {
+                        if (this.r > 1) {
+                            this.r -= 1
+                        }
+                    }
+                    ct.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                    ct.fill();
+                    ct.fillStyle = "black";
+                    ct.beginPath();
+                    ct.stroke()
+                }
+                this.an = function () {
+                    this.dr()
+                }
+            }
+            function rs() {
+                cn.height = innerHeight;
+                cn.width = innerWidth;
+                oo.forEach(function (e) {
+                    e.x = Math.random() * (innerWidth - 40) + 20;
+                    e.y = Math.random() * (innerHeight - 40) + 20
+                })
+            }
+            rs();
+            anim();
+            this.onresize = function () {
+                rs()
+            }
+            function anim() {
+                g = !1;
+                requestAnimationFrame(anim);
+                ct.clearRect(0, 0, innerWidth, innerHeight)
+                oo.forEach(function (e) {
+                    e.an()
+                })
+            }
+        }
+
+    </script>
+    <style>
+        body, p {
+            margin: 0;
+        }
+
+        #cn {
+            position: fixed;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        div#vv {
+            height: 50px;
+            width: 50px;
+            background-color: #0ff;
+            border-radius: 5pc;
+        }
+
+        p {
+            cursor: context-menu;
+        }
+
+        body {
+            box-shadow: inset 2px 6px 20px 10px #4682b4;
+            background-color: #000;
+            font-family: sans-serif;
+            color: #fff !important;
+            font-size: medium;
+            font-weight: 100;
+            line-height: 23px;
+        }
+
+        .container {
+            padding: 2em;
+            text-align: center;
+        }
+
+        body ::selection {
+            color: red !important;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cn"></canvas>
+    <div class="container">
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit cumque doloribus ipsa veritatis officiis ratione aspernatur, voluptatem delectus libero nisi explicabo quisquam reprehenderit velit fugiat debitis, repellendus cum obcaecati beatae pariatur dolor. Qui in, assumenda optio odit enim earum debitis.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quam nemo reprehenderit accusamus suscipit laborum sequi enim voluptas, soluta sapiente ducimus nobis necessitatibus reiciendis, molestiae magni vero veniam quidem veritatis eveniet aut, esse rem doloremque iste. Dolore consequatur molestias laudantium, rerum alias praesentium animi odit ducimus unde minima delectus tempore quia adipisci qui ea repellendus enim beatae mollitia quae fuga! Cupiditate alias numquam quaerat, consequuntur. Doloribus, quasi. Error nulla modi odio molestias numquam omnis nemo necessitatibus tempore, debitis perspiciatis, dolorum soluta asperiores minima obcaecati perferendis sint! Soluta qui ab nemo labore distinctio dignissimos, voluptatem delectus. Iste mollitia saepe, corporis labore ratione, dicta illo voluptatem nesciunt quod blanditiis odio ullam laboriosam debitis in, tempore veritatis dignissimos. Eos hic explicabo eaque nemo ab quaerat assumenda voluptatibus eligendi rem quisquam, earum nesciunt ad quas, corporis debitis dolor impedit soluta molestias suscipit nisi, delectus magni ratione. Consequuntur, hic voluptates sequi velit distinctio suscipit dolorem similique, recusandae dolore, iure eius, atque? Enim fugit praesentium quam, ex sapiente, quia cum voluptate hic nemo dolor in nam, ad, animi fugiat aperiam vero consequatur ea? Id necessitatibus et, perspiciatis accusamus quos sed, asperiores! Perferendis praesentium sequi, obcaecati, doloremque iusto nulla, similique possimus aliquid consequuntur, totam ab accusamus porro facilis dicta repudiandae ipsam eos vitae ea delectus modi maxime tenetur? Ratione quisquam, veniam officiis accusamus vitae tenetur. Ipsam veniam laudantium corporis molestiae inventore, vitae at dolore recusandae distinctio porro nostrum, sint possimus est voluptates atque, alias voluptatum nobis repellendus laborum eligendi rerum dolores? Voluptates repellendus voluptatem consectetur fugiat accusamus, sit, eveniet autem vel, quaerat esse beatae corporis suscipit eaque doloremque expedita laborum enim at, iste iusto nam impedit. Maiores sunt quis excepturi dolor dicta quasi ratione minus cumque vitae magni quo consequatur reprehenderit eveniet minima facilis, ex illo iusto distinctio commodi. Et placeat autem, tempora saepe, reiciendis alias blanditiis repellat odio error consectetur sed voluptatibus eaque delectus nostrum, sunt non! Voluptatem eveniet, sed in ex unde debitis deleniti cumque vero incidunt quidem adipisci, recusandae minima ea fuga qui assumenda voluptas at, doloremque quisquam atque. Alias sit, facilis at dolor! Illum labore, numquam ad ea excepturi ullam. Eligendi sunt maxime tempore, eum reiciendis odit veniam voluptatem dolores facilis repellendus voluptates odio iure minima, ut? Consectetur rem officiis omnis, quia maiores magnam ipsa nostrum. Autem officia cupiditate ipsa est nisi ipsum laudantium praesentium repudiandae modi porro expedita in molestiae laboriosam maxime iste eius itaque soluta iusto repellat aliquid quas doloremque, odio cumque consequuntur. Sit nostrum repudiandae amet temporibus commodi nesciunt sapiente, distinctio, dolor laudantium aperiam. Alias repellendus quod voluptate nulla quisquam aperiam molestias ipsa. Sequi error porro eveniet officia rerum quos voluptates aliquid natus eius quis molestiae modi a exercitationem reprehenderit, dignissimos incidunt, sapiente asperiores iusto reiciendis cumque. Quasi magni necessitatibus, earum. Quia officiis nihil ipsa voluptatum omnis esse tenetur veritatis asperiores, dicta, quisquam ut architecto ad delectus a accusamus nemo deleniti. Atque illum, at possimus? Earum velit pariatur at, nobis, obcaecati voluptas laborum quasi possimus autem nam dolores omnis impedit optio, blanditiis iste sunt odio veritatis. Natus est quis, molestiae illo. Ut nobis ab eum commodi similique ipsam id saepe perferendis atque optio maxime quos doloremque, odit rem cum, nam aliquid aliquam quis eaque aperiam quasi provident! Deleniti praesentium accusamus quos eius assumenda, quo minus mollitia hic illum rem temporibus recusandae voluptates repellendus necessitatibus magnam nostrum excepturi ipsam vitae! A totam quibusdam labore reiciendis excepturi, ut, beatae eius vel itaque officiis quas, repellat nemo perferendis aliquam! Expedita nesciunt facilis labore nemo accusamus aperiam obcaecati quas molestiae aliquid quam alias tempore consectetur, temporibus distinctio debitis maiores, corrupti nisi itaque accusantium impedit placeat vel similique iusto, est sunt. Soluta sed quibusdam facilis fugit rerum reiciendis alias quos accusantium nobis omnis, iure beatae nihil eum! Ipsam, sunt quia repellendus ad odit quaerat eveniet. Incidunt sint, eum deleniti error amet repellat obcaecati ut tempora ducimus beatae soluta reprehenderit doloribus facilis, id dicta perferendis dolorem. Corrupti fugit tempora est in voluptatibus nulla, cum itaque aspernatur explicabo ipsam dicta modi doloremque, optio, saepe impedit culpa. Ratione alias impedit consectetur quos! Obcaecati, vel, blanditiis? Architecto error voluptate, numquam veritatis totam amet repellendus vel doloribus veniam fugit corporis voluptatem soluta recusandae sequi. Ducimus fuga, aliquid, sed et repellendus autem sunt rem. Autem maxime facere, sapiente delectus, voluptas provident amet tenetur voluptatem alias perferendis facilis in. Blanditiis iusto vel fuga natus, facilis repellat quasi odio illo commodi tempore necessitatibus, doloribus delectus esse earum excepturi iste quaerat a voluptates illum. Eaque officiis vel rem distinctio, laborum delectus ullam numquam magni eveniet tenetur. Quaerat illum quos architecto sunt recusandae voluptatum optio, quae ducimus amet velit commodi cumque sint veritatis quo illo distinctio suscipit voluptatem voluptas vitae dolor a, aliquid soluta! Quis rem necessitatibus numquam molestiae ipsam itaque, ea illo nulla eum officia beatae enim accusantium velit inventore doloribus quidem similique adipisci quaerat sapiente, quas expedita veniam ad debitis. Odit vitae voluptas reprehenderit veniam sequi quo non architecto minus vel mollitia facilis dolor deserunt iusto tenetur inventore recusandae, eligendi exercitationem fugiat veritatis quidem accusamus rerum. Unde quas eum ratione totam veniam consequuntur obcaecati qui molestias accusamus incidunt at aperiam doloremque autem odit, illum, quibusdam sed, quos laudantium commodi similique. Possimus beatae ad assumenda recusandae iusto facere autem, voluptates, optio commodi nulla, cupiditate molestiae fuga alias. Dicta, quas suscipit quisquam facilis dolorem dolorum perspiciatis officia labore eaque possimus mollitia nesciunt, qui nisi laudantium animi veniam itaque sed, corporis at fugit soluta. Quis officia natus, eum aliquid corporis. Eaque eligendi eum, fuga enim dolores obcaecati accusamus quam, debitis deleniti ratione similique earum maxime hic reprehenderit eos laudantium suscipit. Reprehenderit et minus, maiores placeat veritatis, suscipit neque in error atque, vel veniam consectetur, officia. Quo, illum, soluta? Animi quibusdam error iure earum, nesciunt illum facilis sint sequi? Placeat ipsum, delectus dolorem fugit quo velit tempore dolore quos quisquam quae et. Impedit, exercitationem id a cupiditate, rem, aperiam eius dolores dolorem accusantium voluptate molestiae itaque, nemo dolor necessitatibus odio sit eveniet qui in consequatur quae quaerat commodi tempora. Cupiditate, sequi perferendis itaque cum officiis asperiores deleniti a officia aliquam, omnis totam aliquid non quis explicabo ad.</p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+ 
+</body>
+</html>

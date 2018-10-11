@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        var cc;
+        var c;
+        var tr = true;
+        var clicked = false;
+        const m = { x: innerWidth / 2, y: innerHeight / 2 };
+        var br = [];
+        var score = 0;
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        setInterval(
+            function () {
+                score += 1;
+                if (score % 10 == 0)
+                {
+                    br.forEach(function (a)
+                    {
+                        a.dx += 1;
+                        a.dy += 1;
+
+                    });
+
+                }
+            },1000);
+        function gc() {
+            var s = "0123456789ABCDEF";
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += s[Math.ceil(Math.random() * 15)]
+            }
+            return c
+        }
+        var p = new ptr(innerWidth / 2, innerHeight / 2, 50, 50, "red",10, 10, 0);
+        function put() {
+            tr = false;
+            c.fillStyle = "white";
+            c.font = "30px Arial";
+            c.textAlign = "center";
+            c.strokeText("You r Hits Score(In seconds):>>>"+score,innerHeight/2,100);
+        }
+        window.addEventListener('mousedown', event=> {
+            p.cc = "green";
+            m.x = event.clientX;
+            m.y = event.clientY
+            clicked = true;
+        }
+      );
+        window.addEventListener('mouseup', event=> {
+            p.cc = "red";
+            m.x = event.clientX;
+            m.y = event.clientY;
+            clicked = false;
+        }
+    );
+        window.addEventListener('mousemove', event=> {
+            m.x = event.clientX;
+            m.y = event.clientY
+        }
+          );
+        window.onload = function () {
+            for (var i = 0; i < 20; i++) {
+              
+                var w = Math.random() * 100+40;
+                var h = Math.random() *100+40;
+                var x =( Math.random() * (innerWidth /4-w))+w;
+                var y = (Math.random() * (innerHeight/4 -h)) +h;
+                var s = Math.random() * 3 + 0.5;
+                var ss = Math.random() * 3+ 0.5;
+                br.push(new block(x,y,h,w,"blue",s,ss));
+            }
+            cn = document.getElementById('cw');
+            c = cn.getContext('2d');
+            start();
+        }
+        function start() {
+            requestAnimationFrame(start);
+            if (tr) {
+                Field();
+                p.move();
+                br.forEach(function (a) {
+                    a.dra();
+                });
+            }
+         
+        }
+
+        function coll(rect1, rect2)
+        {
+            if (rect1.x < rect2.x + rect2.w &&
+   rect1.x + rect1.w > rect2.x &&
+   rect1.y < rect2.y + rect2.h &&
+   rect1.h + rect1.y > rect2.y) {
+                return true;
+            }
+
+            return false;
+        }
+        function Field() {
+            cn.width = innerWidth;
+            cn.height = innerHeight;
+            c.strokeStyle = "#666";
+            
+            c.lineWidth = 100;
+            c.rect(0, 0, innerWidth, innerHeight);
+            c.stroke();
+            c.lineWidth = 2;
+            c.beginPath();
+        }
+        function block(x, y,h,w, cc, dx, dy) {
+
+            this.x = x;
+            this.y = y;
+            this.h = h;
+            this.w = w;
+            this.cc = cc;
+            this.dx = dx;
+            this.dy = dy;
+            this.dra = function () {
+                this.x += this.dx;
+                this.y += this.dy;
+                if (coll(this,p)) {
+                    put();
+                }
+                if (this.x <= 0 || this.x >= innerWidth) {
+                    this.dx = -this.dx;
+                    this.cc = gc();
+                }
+
+                if (this.y <= 0 || this.y >= innerHeight) {
+                    this.dy = -this.dy;
+                    this.cc = gc();
+
+
+                }
+                c.beginPath();
+                c.fillStyle = this.cc;
+                c.fillRect(this.x, this.y, this.w, this.h);
+                c.fill();
+                c.beginPath();
+            }
+        }
+        function ptr(x, y, h, w, cc, dx, waste, r) {
+
+                this.x = x;
+                this.y = y;
+                this.h = h;
+                this.w = w;
+                this.cc = cc;
+                this.dx = dx;
+                this.dy = dx;
+                this.move = function ()
+                {
+                    
+
+                        if (this.x <= 50 || this.x>=innerWidth-100) {
+                           
+                            put();
+                        }
+                        if (this.y <= 50 || this.y >= innerHeight - 100) {
+                           
+                            put();
+                        }
+                        if (this.x > m.x) {
+                            this.dx = -Math.abs(this.dx);
+                        }
+                        else {
+
+                            this.dx = Math.abs(this.dx);
+                        }
+                        if (this.y > m.y) {
+                            this.dy = -Math.abs(this.dy);
+                        }
+                        else {
+                            this.dy = Math.abs(this.dy);
+                        }
+
+                        if (clicked && tr) {
+                            var xx = Math.abs(this.dx / 2);
+                            if (!(m.x - xx <= this.x && m.x + xx >= this.x)) {
+                                if (this.x != m.x) {
+                                    this.x += this.dx;
+                                }
+                            }
+                            if ((!(m.y - xx <= this.y && m.y + xx >= this.y))) {
+                                if (this.y != m.y) {
+                                    this.y += this.dy;
+                                }
+
+                            }
+                        }
+                        c.beginPath();
+                        c.fillStyle = this.cc;
+                        c.fillRect(this.x, this.y, this.w, this.h);
+                        c.fill();
+                        c.beginPath();
+
+                    
+                }
+        }
+   
+    </script>
+       <style>
+           html, body, head {
+    margin: 0;
+    /*cursor: none;*/
+    height: 100%;
+    overflow: hidden;
+}
+    </style>    
+</head>
+
+<body>
+    <canvas  id="cw">
+
+    </canvas>
+</body>
+</html>
