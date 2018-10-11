@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+#bx
+{
+    animation: moves 50s infinite linear;  
+}
+@-webkit-keyframes moves {
+    0% {
+      background-position: top;
+    }
+  
+    20% {
+      background-position: 50%;
+    }
+  
+    40% {
+      background-position: bottom;
+    }
+  
+    60% {
+      background-position: 50%;
+    }
+  
+    to {
+      background-position: top;
+    }
+  }
+  @keyframes moves {
+    0% {
+      background-position: top;
+    }
+  
+    20% {
+      background-position: 50%;
+    }
+  
+    40% {
+      background-position: bottom;
+    }
+  
+    60% {
+      background-position: 50%;
+    }
+  
+    to {
+      background-position: top;
+    }
+  }
