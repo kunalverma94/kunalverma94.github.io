@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Quick Notes</title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="notes.css" rel="stylesheet">
+     <script src="notes.js"></script>
+    </head>
+    <body>
+        <div class="nav full" id="navbar"  ondblclick="Fulltoggle()">
+            <div class="nav_text mid">
+                <i style="    font-size: 32px;font-family: serif;">Q</i>
+                uick Notes
+  
+            </div>
+        </div>
+        <div>
+            <div class="search_div ">
+                <input type="text" id="search" placeholder="Search Notes" class="search" title="Experimental Donot use not">
+            </div>
+            <div id="dropper">
+                <ol id="lissy">
+                    <li class="item">
+                        <div class="lay">
+                            <div class="title">Note:</div>
+                            <div class="content">
+                                <textarea class="text" rows="9"></textarea>
+                            </div>
+                            <div class="tool">
+                                <i class="material-icons" title="Full Screen" onclick="HandleFull(this)">fullscreen</i>
+                                <i class="material-icons" title="delete" onclick="Remove(this)">delete</i>
+                                <i class="material-icons" title="clear" onclick="Clear(this)">clear</i>
+                                <i class="material-icons" title="copy" onclick="Copy(this)">content_copy</i>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div>
+            <div id="save" title="Save Note" class="material-icons pulse opts save">save</div>
+            <div id="add" title="Add New Note" class="material-icons pulse opts ">&#xe145;</div>
+            <div id="down" title="Download All Note" class="material-icons  opts down">file_download</div>
+        </div>
+    </body>
+    <input style="height: 0px;
+position: absolute;
+bottom: 999999px;" type="text" value="1" id="ds">
+</html>

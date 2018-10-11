@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Material Wallpapers</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/assets/material/materialize.min.css">
+        <script src="/assets/material/materialize.min.js"></script>
+        <link href="wall.css" rel="stylesheet" />
+        <script src="wall.js"></script>
+    </head>
+    <body>
+        <div class="system"></div>
+        <div class="tmp">
+            <div class="tmp_bg" id="tmp">
+                <div id="_tmpico"></div>
+            </div>
+            <div class="ls ups">
+                <div class="lsd ">
+                    <ul id="symbol_list"></ul>
+                </div>
+                <div class="rtt" onclick="mod(1)">
+                    <div>⮫</div>
+                </div>
+                <div class="ltt" onclick="mod(-1)">
+                    <div>⮪</div>
+                </div>
+                <div class="bar">
+                    <div class="cir">
+                        <input type="number" onchange="poo(this.value)" id="pl" value="1" max="912" min="1">
+                    </div>
+                    <div id="Dtxt_color"></div>
+                </div>
+                <input type="color" value="#ffffff" name="name" id="txt_color" style="display:none"/>
+                <div onclick="symbol_shutter()" style="height: 14px; color: transparent;" class="btn">☯Icon</div>
+            </div>
+            <div class="symbol_shutter layout">
+                <div class="layout_ins">
+                    <div class="waves-effect waves-light btn" onclick="symbol_shutter()" style="display:inline;line-height:0;">☯ Icon</div>
+                    <div class="waves-effect waves-light btn" onclick="demoInsertText()" style="display:inline;line-height:0;">☈ Text</div>
+                    <div class="waves-effect waves-light btn" style="display:inline;line-height:0;" onclick="demoInsertQuote()" >⚛ Quotes</div>
+                    <div class="waves-effect waves-light btn" onclick="controll_shutter()" style="display:inline;line-height:0;">☸ Controls</div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="row" style="margin: 0!important;">
+                    <div class="input-field col s6">
+                        <input value="0" id="width" name="width" type="text" maxlength="5">
+                        <label class="active" for="width">
+                            <span>Width</span>
+                        </label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input value="0" id="height" name="height" type="text" maxlength="5">
+                        <label class="active" for="height">
+                            <span>Height</span>
+                        </label>
+                    </div>
+                </div>
+                <div style="width:100%;">
+                    <div class="waves-effect waves-light btn fu">
+                        <label>
+                            <input type="checkbox" id="grad">
+                            <span style="background:none">Gradient</span>
+                        </label>
+                    </div>
+                    <div class="switch waves-effect waves-light btn fu">
+                        <label>
+                            HR
+                    <input type="checkbox" id="_v" disabled='true'>
+                            <span class="lever"></span>
+                            VR
+                
+                            
+                        </label>
+                    </div>
+                    <div style="width: 27%;float: right;">
+                        <label class="active dim" for="op">
+                            <span>
+                                Opacity:
+                        <span id="ov">100</span>
+                                %
+                            </span>
+                        </label>
+                        <input orien type="range" step="1" value="100" id="op" min="1" max="100"/>
+                    </div>
+                </div>
+                <div style="width:100%;display:inline-table">
+                    <a class="waves-effect waves-light btn" style="width:25%" id="reset">Reset</a>
+                    <a class="waves-effect waves-light btn" style="width:25%" id="dummy_click">Set Color</a>
+                    <a class="waves-effect waves-light btn" style="width:50%" id="random">Random color</a>
+                    <input type="color" name="name" id="color" value="#ffffff" style="display:none"/>
+                </div>
+                <div style="padding:0.5rem 0rem 0rem 0rem;">
+                    <a class="waves-effect waves-light btn" style="width:100%; padding: 2rem; line-height: 6px;" id="save">Download</a>
+                </div>
+            </div>
+        </div>
+        <div class="banner" id="selector">SolidState Walls &copy;</div>
+        <canvas id="cc"></canvas>
+    </body>
+</html>
