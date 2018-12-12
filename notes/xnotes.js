@@ -12,7 +12,7 @@ function _send(da) {
 }
 function _get() {
     var f = new XMLHttpRequest();
-    f.open("GET", "https://api.mlab.com/api/1/databases/sam/collections/Notes?apiKey=pdzTC7g-CT_ZEM5cHdTDcRj4b65cTVyM", );
+    f.open("GET", "https://api.mlab.com/api/1/databases/sam/collections/Notes?apiKey=pdzTC7g-CT_ZEM5cHdTDcRj4b65cTVyM");
     f.send();
     f.onreadystatechange = function(e) {
         if (f.status = 200 && f.readyState == 4) {
