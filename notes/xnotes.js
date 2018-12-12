@@ -208,7 +208,7 @@ const keys = {
 function Search(v) {
 
     var t = document.getElementsByClassName("text");
-    for (const key in t) {
+    for (var key in t) {
         if (t[key].value != undefined)
             if (t[key].value.toString().toLowerCase().search(v.toLowerCase()) <= -1) {
                 t[key].parentNode.parentElement.parentElement.style.display = "none";
