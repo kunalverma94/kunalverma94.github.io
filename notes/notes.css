@@ -201,7 +201,7 @@ body {
 
 .save {
     left: 0;
-    right: unset!important;
+    right: auto;
     padding: 0.5rem;
     font-size: 36px;
 }
