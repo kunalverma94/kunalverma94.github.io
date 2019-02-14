@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,19 +10,19 @@
     <meta http-equiv="content-language" content="nl" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Kunal VErma" />
-    <meta name="description" content="I'm Kunal Verma, a ninja developer / creative programmer with good knowledge of front & Back ->end technics."
-    />
+    <meta name="description" content="I'm Kunal Verma, a ninja developer / creative programmer with good knowledge of front & Back ->end technics."/>
     <title>Kunal Verma - Interactive Resume</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css" />
-    <link href="/view/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/view/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
     <div id="progresses"></div>
     <div id="top" class="jumbotron">
         <div class="container">
-            <h1>Kunal Verma</h1>
+            <h1> <span class="classy">K</span>unal <span class="classy">V</span>erma</h1>
             <p class="lead">Interactive resume</p>
         </div>
         <a href="#profile" class="scroll-down">
@@ -55,6 +55,9 @@
                 <li>
                     <a href="#contact">Contact</a>
                 </li>
+                <li>
+                    <a  href="#"  class="fa fa-sun-o mode "> </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -75,7 +78,7 @@
                 <div class="col-md-4 text-center">
                     <img src="https://api.adorable.io/avatars/2825/y.png" alt="kunal" width="246" height="246">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" style="text-align:center">
                     <h3>Details</h3>
                     <p>
                         <strong>Name:</strong>
@@ -85,7 +88,7 @@
                         <br/> 24 years
                         <br/>
                         <strong>Location:</strong>
-                        <br/>Pune
+                        <br/>Gurgaon
                     </p>
                 </div>
             </div>
@@ -204,17 +207,38 @@
         <hr/>
         <h3>Careers</h3>
         <div class="experiences">
+                <div class="experience row">
+                        <div class="col-md-4">
+                            <h4>NPO Product Based Client</h4>
+                            <p class="experience-period">Nov 2018-Present</p>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                <strong>Fulltime - Senior Associate Technology</strong>
+                                <div>A supplier of software and services specifically designed for nonprofit organizations. Its products focus on fundraising, website management, CRM, analytics, financial management, ticketing, and education administration.</div>
+                                <div class="hidden-phone "> <i class="fa fa-code hashtag"></i>Working as a Full stack .Net ,Angular Developer  </div>
+                                <span class="experience-details">
+                                    <span class="location">
+                                        <span class="glyphicon glyphicon-map-marker"></span>
+                                       Gurgaon 
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- here -->
             <div class="experience row">
                 <div class="col-md-4">
                     <h4>Infosys-Heath &amp;Insurance Domain </h4>
-                    <p class="experience-period">Dec 2017-Present</p>
+                    <p class="experience-period">Dec 2017-Nov 2018</p>
                 </div>
                 <div class="col-md-8">
                     <p>
                         <strong>Fulltime - Senior Developer/Security Engineer</strong>
-                        <span class="hidden-phone">Working as a Senior Devloper and Security Engineer for a large American Heath &amp;Insurance Domain
+                        <div>A Fortune 500  United States-based investment and insurance company</div>
+                        <div class="hidden-phone "> <i class="fa fa-code hashtag"></i>Working as a Senior Devloper and Security Engineer for a large American Heath &amp;Insurance Domain
                             related Client. The application is .NET based and as a team we are working in a fully scrum way.Implement
-                            and neutralize various Security Threats </span>
+                            and neutralize various Security Threats </div>
                         <div class="dropdown hidden-phone">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                 More
@@ -225,8 +249,6 @@
                                     <a href="#">
                                         Secutity/Authentication ,Authorization,
                                         <br>Reflected/Stored XSS:ASP.NET,CHECKMAX
-
-
                                     </a>
                                 </li>
                                 <li>
@@ -263,9 +285,10 @@
                 <div class="col-md-8">
                     <p>
                         <strong>Fulltime - Senior Developer/Build Engineer</strong>
-                        <span class="hidden-phone">Working as a Associate application Devloper on a large Health Care related Client. The application
+                        <span class="hidden-phone"> American managed health care company that sells traditional and consumer directed health care insurance plans and related services, such as medical, pharmaceutical, dental, behavioral , behavioral health, long-term care, and disability plans, primarily through employer-paid (fully or partly) insurance and benefit programs</span>
+                        <div class="hidden-phone "> <i class="fa fa-code hashtag"></i>Worked as a Associate application Devloper on a large Health Care related Client. The application
                             is .Net based and as a team we are working in a fully scrum way.As a Build Engineer deployment
-                            i build and deployed the code to the different Environments.</span>
+                            i build and deployed the code to the different Environments.</div>
                         <span class="experience-details">
                             <span class="location">
                                 <span class="glyphicon glyphicon-map-marker"></span>
@@ -277,14 +300,15 @@
             </div>
             <div class="experience row">
                 <div class="col-md-4">
-                    <h4>ALSTORM</h4>
+                    <h4>Infosys:Logisic & Transport Client</h4>
                     <p class="experience-period">DEC 2016 - Mar 2017 </p>
                 </div>
                 <div class="col-md-8">
                     <p>
                         <strong>Fulltime - Developer</strong>
-                        <span class="hidden-phone">Developement and Migration of SharePoint 2013 based site.
-                        </span>
+
+                        <span class="hidden-phone">French multinational company operating worldwide in rail transport markets, active in the fields of passenger transportation, signalling and locomotives</span>
+                        <div class="hidden-phone "> <i class="fa fa-code hashtag"></i> Developement and Migration of SharePoint 2013 based site.</div>
                         <span class="experience-details">
                             <span class="location">
                                 <span class="glyphicon glyphicon-map-marker"></span>
@@ -416,292 +440,10 @@
             <h3>Skills</h3>
             <div class="row">
                 <div class="col-md-6">
-                    <ul class="no-bullets">
-                        <li>
-                            <span class="ability-title">Bootstrap,Material and other CSS Framework</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">CSS(3)</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">HTML(5)</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">JSON,XML</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Oracle, PLSQL &amp;MSSQL</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Node JS</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Builder Pattern</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Command line Inteface</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">JQuery,JQueryUI</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">C#</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Javascript</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">C,C++ Java</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">.NET Framework</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Animations</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul class="no-bullets skillset1"></ul>
                 </div>
                 <div class="col-md-6">
-                    <ul class="no-bullets">
-                        <li>
-                            <span class="ability-title">ASP.NET MVC </span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Design Pattern</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Object Orientated Programming</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">SOLID Principals</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">WPF,WinForms and Windows Services</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Agile &amp;Scrum Methodology</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">ADO.NET EntitiyFrameWork</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Angular CLI</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Angular js</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">MongoDB</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Node js</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">REST,SOAP,WFC,AJAX</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">SharePoint 2013</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Threading,Async &amp;Data structure</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul class="no-bullets skillset2"> </ul>
                 </div>
             </div>
             <div class="text-center project-referal">
@@ -711,152 +453,10 @@
             <h3>Tools</h3>
             <div class="row">
                 <div class="col-md-6">
-                    <ul class="no-bullets">
-                        <li>
-                            <span class="ability-title">IE/Chrome debugging </span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Fiddler</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Performance and IT Security Threats Analysis</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Visual Studio &amp;VS code</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Webkit browsers </span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">CORA &amp;CORB issues</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Adobe suits</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">MS office Suite</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul class="no-bullets toolset1"> </ul>
                 </div>
                 <div class="col-md-6">
-                    <ul class="no-bullets">
-                        <li>
-                            <span class="ability-title">TFS</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Git / Git Flow</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Cross Browsers Optimisation</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Clear Case</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Website optimisation</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="ability-title">Debugging &amp;Code implementation</span>
-                            <span class="ability-score">
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star filled"></span>
-                                <span class="glyphicon glyphicon-star "></span>
-                            </span>
-                        </li>
-                    </ul>
+                    <ul class="no-bullets toolset2"> </ul>
                 </div>
             </div>
         </div>
@@ -877,7 +477,7 @@
                         <p>awesome Movies/Tv Shows Suggestions </p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>Angular ,Material
+                           Angular ,Material
                         </p>
                         <a href="/dev/abc/index.html" target="_blank">View more</a>
                         <span class="icon">
@@ -894,7 +494,7 @@
                         <p>Geterates Custom MetroUI Wallpapres esp. for Android</p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>Javascript, Development, Bootstrap, Material
+                           Javascript, Development, Bootstrap, Material
                         </p>
                         <a href="/wall/v4/wall.html" target="_blank">View more</a>
                         <span class="icon">
@@ -911,7 +511,7 @@
                         <p>Save Online/offline Notes<br>Power Packed<br>Download/upload Notes</p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>Angular ,Material,NPM
+                           Angular ,Material,NPM
                         </p>
                         <a href="notes/notes.html" target="_blank">View more</a>
                         <span class="icon">
@@ -923,13 +523,13 @@
         
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <figure class="effect">
-                    <img src="/view/images/project_oetelspel.jpg" style="width:94%;" alt="Oetelspel" />
+                    <img src="/view/images/project_oetelspel.jpg"  alt="Oetelspel" />
                     <figcaption>
                         <h3>.Net Project Builder</h3>
                         <p>Builds,Cleans,Rebuild Multiple projects 3X faster. </p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>.Net,C# ,WPF,Threading
+                           .Net,C# ,WPF,Threading
                         </p>
                         <a href="/assets/Documents/bil.mp4" onclick="javascript:alert('Project Internal :not available for users')" target="_blank">View more</a>
                         <span class="icon">
@@ -938,7 +538,7 @@
                     </figcaption>
                 </figure>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6" style="float:right">
+            <div class="col-md-6 col-sm-6 col-xs-6" >
                 <figure class="effect">
                     <img src="/view/images/gallery.jpg" alt="Oranjebitter Rotterdam" />
                     <figcaption>
@@ -946,7 +546,7 @@
                         <p>Websites Git templates All Devices Compatible</p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>Development,CSS, Javascript ,Mobile
+                           Development,CSS, Javascript ,Mobile
                         </p>
                         <a href="gallery/gallery.html" target="_blank">View more</a>
                         <span class="icon">
@@ -963,7 +563,7 @@
                         <p>Search nuget packages</p>
                         <p>
                             <strong>Tags:</strong>
-                            <br/>Angular ,Material,NPM
+                           Angular ,Material,NPM
                         </p>
                         <a href="/dev/odem/index.html" target="_blank">View more</a>
                         <span class="icon">
@@ -972,7 +572,40 @@
                     </figcaption>
                 </figure>
             </div>
-
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                    <figure class="effect">
+                        <img src="/view/images/git.png" alt="Mals" />
+                        <figcaption>
+                            <h3>Git People</h3>
+                            <p>View All GitHub Profile Pics:I was bored :p</p>
+                            <p>
+                                <strong>Tags:</strong>
+                               Javascript
+                            </p>
+                            <a href="/dev/odem/index.html" target="_blank">View more</a>
+                            <span class="icon">
+                                <span class="glyphicon glyphicon-new-window"></span>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                        <figure class="effect">
+                            <img src="/view/images/cs.png" alt="Mals" />
+                            <figcaption>
+                                <h3>Distance Me!</h3>
+                                <p>Find The Shortest Path TO visit All Places</p>
+                                <p>
+                                    <strong>Tags:</strong>
+                                   Google APi &React+ ??
+                                </p>
+                                <a href="/dev/odem/index.html" target="_blank">View more</a>
+                                <span class="icon">
+                                    <span class="glyphicon glyphicon-new-window"></span>
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </div>
         </div>
     </div>
     <div class="background-gray">
@@ -988,24 +621,31 @@
                     <ul class="no-bullets">
                         <li>
                             <a href="https://github.com/kunalverma94" target="_blank">
-                                <span class="icon icon-git"></span>
-                                https://github.com/kunalverma94
+                                <span class="ico_contact fa fa-github-square"></span>
+                                github
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/kunalverma94" target="_blank">
-                                <span class="icon icon-linkedin"></span>
-                                http://linkedin.com
+                                <span class="ico_contact fa fa-linkedin-square"></span>
+                                Linkedin
                             </a>
                         </li>
+                      
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="no-bullets">
                         <li>
                             <a href="mailto:kunalverma94@yahoo.com">
-                                <span class="icon icon-email"></span>
-                                <span>kunalverma94@yahoo.com</span>
+                                <span class="ico_contact fa fa-yoast"></span>
+                               kunalverma94@yahoo.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/users/10417161/kunal-verma" target="_blank">
+                                <span class="ico_contact fa fa-code"></span>
+                                StackOverflow
                             </a>
                         </li>
                     </ul>
@@ -1014,9 +654,9 @@
             <hr/>
         </div>
     </div>
-    <script type="text/javascript" src="/view/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="/view/js/script.js"></script>
-    <script type="text/javascript" src="/view/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
