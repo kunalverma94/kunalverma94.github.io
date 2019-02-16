@@ -145,28 +145,13 @@
        
     }
 }
-
-@keyframes rel {
-    0% {
-        left: 5%;
-    }
-
-    50% {
-        left: 2.5%;
-
-    }
-
-    100% {
-        left: 0%;
-    }
-}
 .jumbotron .container h1 {
     padding-bottom: 20px;
     border-top: 1px solid transparent;
     border-bottom-color: rgba(255,255,255,0.35);
     display: inline-block;
     transition: 0.5s;   
-    animation: borders 3s linear infinite,fli 4s ease-in 1;
+    animation: borders 3s linear infinite;
     text-shadow: 5px 7px 20px #424242;
    
 
