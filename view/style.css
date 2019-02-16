@@ -174,8 +174,6 @@
 span.classy
 {
     position: relative;
-    animation: rel 4s ease-out 1;
-
 }
 .jumbotron .container h1:hover {
     border-bottom: 2px solid #FFFFFF;
