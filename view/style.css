@@ -375,6 +375,7 @@ hr {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     background: var(--primary);
     color: #FFFFFF;
+    transition: 1s ease-in;
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
@@ -388,6 +389,7 @@ hr {
 
 .background-white {
     background:var(--dbgg_wh);
+    transition: 1s ease-in;
 }
 
 .background-gray {
