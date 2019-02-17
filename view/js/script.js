@@ -31,6 +31,7 @@ let s12 = [
     {"skill":"Angular","level":4},
     {"skill":"React JS","level":4},
     {"skill":"RXjs","level":4},
+    {"skill":"FireBase","level":4},
     {"skill":".NET Core","level":3},
     {"skill":"ASP.NET MVC","level":5},
     {"skill":"ADO.NET EntitiyFrameWork","level":5},
