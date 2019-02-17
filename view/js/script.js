@@ -40,7 +40,6 @@ let s12 = [
     {"skill":"Design Pattern","level":4},
     {"skill":"SOLID Principals","level":4},
     {"skill":"Object Orientated Programming","level":4},
-    {"skill":"WPF,WinForms and Windows Services","level":4},
     {"skill":"Agile &Scrum Methodology","level":5},
     {"skill":"REST,SOAP,WFC,AJAX","level":3},
     {"skill":"Data structure","level":3}
