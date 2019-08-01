@@ -45,6 +45,9 @@
                     <a href="#profile">Profile</a>
                 </li>
                 <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
                     <a href="#experiences">Experiences</a>
                 </li>
                 <li>
@@ -67,7 +70,6 @@
         <div id="profile" class="container">
             <h2>Profile</h2>
             <p class="lead">I &#039;m a developer</p>
-            <hr />
             <div class="row">
                 <div class="col-md-4">
                     <h3>About me</h3>
@@ -96,13 +98,12 @@
             </div>
         </div>
     </div>
-    <div id="experiences" class="container">
-        <h2>Experiences</h2>
+    <div id="education" class="container">
+        <h2>Education</h2>
         <p class="lead">
-            &ldquo;Protons give an atom its identity, electrons its personality.&rdquo;
-            <br />- Bill Bryson, A short history of nearly everything
+            &ldquo;Education is what remains after one has forgotten what one has learned in school.&rdquo;
+            <br />- Albert Einstein
         </p>
-        <hr />
         <h3>Educations</h3>
         <div class="experiences">
             <div class="experience row">
@@ -213,8 +214,13 @@
                 </div>
             </div>
         </div>
-        <hr />
-        <h3>Careers</h3>
+    </div>
+    <div id="experiences" class="container">
+        <h2>Experiences</h2>
+        <p class="lead">
+            &ldquo;Protons give an atom its identity, electrons its personality.&rdquo;
+            <br />- Bill Bryson, A short history of nearly everything
+        </p>
         <div class="experiences">
             <div class="experience row">
                 <div class="col-md-4">
@@ -463,29 +469,23 @@
                 &ldquo;Life without knowledge is death in disguise.&rdquo;
                 <br />- Talib Kweli
             </p>
-            <hr />
-            <h3>Skills</h3>
             <div class="row">
-                <div class="col-md-6">
-                    <ul class="no-bullets skillset1"></ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="no-bullets skillset2"> </ul>
+                <div class="flex">
+                    <template id="skillmat">
+                        <div class="fb">
+                            <div class="title">[[TITLE]]</div>
+                            <div class="skillbox">
+                                <ul class="no-bullets">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
             <div class="text-center project-referal">
                 <a href="https://github.com/kunalverma94" class="btn btn-primary" target="_blank">See project on
                     Github</a>
-            </div>
-            <hr />
-            <h3>Tools</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="no-bullets toolset1"> </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="no-bullets toolset2"> </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -655,6 +655,40 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <figure class="effect">
+                    <img src="./view/images/bcc.jpg" alt="bcc" />
+                    <figcaption>
+                        <h3>Brodcast Chat</h3>
+                        <p>Just like wataspp group message</p>
+                        <p>
+                            <strong>Tags:</strong>
+                            Node js,Websockets,javascript
+                        </p>
+                        <a href="https://kunalverma94.github.io/brodcsta/index.html" target="_blank">View more</a>
+                        <span class="icon">
+                            <span class="glyphicon glyphicon-new-window"></span>
+                        </span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <figure class="effect">
+                    <img src="./view/images/snake.jpg" alt="bcc" />
+                    <figcaption>
+                        <h3>"The" Snake Game</h3>
+                        <p>Just like wataspp group message</p>
+                        <p>
+                            <strong>Tags:</strong>
+                            Javascript,canvas,html5
+                        </p>
+                        <a href="https://kunalverma94.github.io/pokemon/snake.html" target="_blank">View more</a>
+                        <span class="icon">
+                            <span class="glyphicon glyphicon-new-window"></span>
+                        </span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <figure class="effect">
                     <img src="/view/images/cs.png" alt="Mals" />
                     <figcaption>
                         <h3>Distance Me!</h3>
@@ -691,7 +725,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/kunal-verma-63a375180/" target="_blank">
+                            <a href="https://www.linkedin.com/in/kunal-verma-6a318b186/" target="_blank">
                                 <span class="ico_contact fa fa-linkedin-square"></span>
                                 Linkedin
                             </a>

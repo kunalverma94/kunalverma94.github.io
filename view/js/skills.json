@@ -1,0 +1,202 @@
+{
+    "Microsoft_Stream": [
+        {
+            "skill": "Micorosoft Azure",
+            "level": 4
+        },
+        {
+            "skill": ".NET Core",
+            "level": 3
+        },
+        {
+            "skill": ".NET Framework",
+            "level": 4
+        },
+        {
+            "skill": ".NET Core",
+            "level": 3
+        },
+        {
+            "skill": "ASP.NET MVC",
+            "level": 5
+        },
+        {
+            "skill": "ADO.NET EntitiyFrameWork",
+            "level": 5
+        }
+    ],
+    "Databases": [
+        {
+            "skill": "MS Cosmos DB",
+            "level": 3
+        },
+        {
+            "skill": "Oracle, PLSQL &MSSQL",
+            "level": 5
+        },
+        {
+            "skill": "MongoDB",
+            "level": 3
+        }
+    ],
+    "Framworks": [
+        {
+            "skill": "Angular",
+            "level": 4
+        },
+        {
+            "skill": "React JS",
+            "level": 4
+        },
+        {
+            "skill": "React Native",
+            "level": 2
+        },
+        {
+            "skill": "RXjs",
+            "level": 4
+        },
+        {
+            "skill": "FireBase",
+            "level": 4
+        }
+    ],
+    "Styles": [
+        {
+            "skill": "Bootstrap,Material and other CSS Framework",
+            "level": 5
+        },
+        {
+            "skill": "CSS(3)",
+            "level": 5
+        },
+        {
+            "skill": "HTML(5)",
+            "level": 5
+        },
+        {
+            "skill": "JQuery,JQueryUI",
+            "level": 5
+        },
+        {
+            "skill": "Webkit browsers",
+            "level": 5
+        }
+    ],
+    "Language": [
+        {
+            "skill": "C#",
+            "level": 5
+        },
+        {
+            "skill": "Node JS",
+            "level": 5
+        },
+        {
+            "skill": "C,C++ Java",
+            "level": 3
+        },
+        {
+            "skill": "Javascript",
+            "level": 5
+        },
+        {
+            "skill": "TypeScript",
+            "level": 5
+        }
+    ],
+    "Methodology_And_Principals": [
+        {
+            "skill": "Design Pattern",
+            "level": 4
+        },
+        {
+            "skill": "SOLID Principals",
+            "level": 4
+        },
+        {
+            "skill": "Object Orientated Programming",
+            "level": 4
+        },
+        {
+            "skill": "Agile & Scrum Methodology",
+            "level": 5
+        },
+        {
+            "skill": "Data structure",
+            "level": 3
+        }
+    ],
+    "other": [
+        {
+            "skill": "JSON,XML,AJAX",
+            "level": 5
+        },
+        {
+            "skill": "REST,SOAP,WFC",
+            "level": 3
+        },
+        {
+            "skill": "Command line Inteface",
+            "level": 4
+        },
+        {
+            "skill": "Animations",
+            "level": 4
+        }
+    ],
+    "Tools": [
+        {
+            "skill": "Docker",
+            "level": 4
+        },
+        {
+            "skill": "Jenkins",
+            "level": 2
+        },
+        {
+            "skill": "IE/Chrome debugging",
+            "level": 5
+        },
+        {
+            "skill": "Fiddler",
+            "level": 5
+        },
+        {
+            "skill": "Performance and IT Security Threats Analysis",
+            "level": 5
+        },
+        {
+            "skill": "Visual Studio &VS code",
+            "level": 5
+        },
+        {
+            "skill": "Adobe suits",
+            "level": 4
+        },
+        {
+            "skill": "MS office Suite",
+            "level": 4
+        },
+        {
+            "skill": "visual studio Team",
+            "level": 4
+        },
+        {
+            "skill": "TFS",
+            "level": 4
+        },
+        {
+            "skill": "Git / Git Flow",
+            "level": 4
+        },
+        {
+            "skill": "Website optimisation",
+            "level": 4
+        },
+        {
+            "skill": "Debugging &Code implementation",
+            "level": 4
+        }
+    ]
+}
