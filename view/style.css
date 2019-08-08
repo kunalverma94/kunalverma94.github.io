@@ -398,7 +398,7 @@ hr {
     margin-bottom: 10px
 }
 
-.experiences .experience .experience-details {
+.experiences .experience .experience-details ,.experience-details{
     display: block;
     margin-top: 6px
 }
@@ -641,7 +641,14 @@ figure.effect:hover p {
 .fb:hover {
     box-shadow: 3px 4px 0px 0px var(--primary);
 }
-
+.bboxed
+{
+    box-shadow: 3px 4px 0px 0px var(--primary);
+}
+.tboxed{
+    opacity: 1!important;
+    font-size: x-large
+}
 .title {
     color: var(--primary);
     opacity: 0;
@@ -661,6 +668,8 @@ figure.effect:hover p {
 .fb .title:hover {
     opacity: 1;
 }
+
+
 
 @media (max-width: 767px) {
     .flyon {

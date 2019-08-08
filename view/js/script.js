@@ -152,3 +152,30 @@ function GhostTost(s) {
     e.remove();
   }, 1000);
 }
+
+var _ai = 0;
+if (window.innerHeight > 900) {
+  var t = setInterval(() => {
+    var f = document.getElementsByClassName("fb");
+    let element = f[0];
+    let prev = f[f.length - 1];
+
+    if (_ai >= f.length - 1) {
+      _ai = 0;
+      element = prev;
+      element.classList.remove("bboxed");
+      element.getElementsByClassName("title")[0].classList.remove("tboxed");
+    } else {
+      _ai++;
+    }
+    prev = f[_ai - 1];
+    if (prev) {
+      element = prev;
+      element.classList.remove("bboxed");
+      element.getElementsByClassName("title")[0].classList.remove("tboxed");
+    }
+    element = f[_ai];
+    element.classList.toggle("bboxed");
+    element.getElementsByClassName("title")[0].classList.toggle("tboxed");
+  }, 2000);
+}
