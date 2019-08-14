@@ -1,3 +1,8 @@
+@font-face
+{
+    font-family:foo;
+    src: url(./arm.ttf);
+}
 .flyon {
     position: fixed;
     background: #323232;
@@ -178,10 +183,9 @@ body {
     color: #fff
 }
 
-.h1,.h2,.h3,.h4,.h5,.h6,b,h1,h2,h3,h4,h5,h6,strong {
-    font-family: 'Open Sans',sans-serif!important;
+/* .h1,.h2,.h3,.h4,.h5,.h6,b,h1,h2,h3,h4,h5,h6,strong {
     margin-bottom: 20px
-}
+} */
 
 h1,h4 {
     font-weight: 700;
@@ -669,8 +673,12 @@ figure.effect:hover p {
     opacity: 1;
 }
 
-
-
+li.dnd, li.dnd>a {
+    padding: 0!important;
+    margin: 0!important;
+    height: 24px!important;
+    border-bottom: solid 1px var(--primary);
+}
 @media (max-width: 767px) {
     .flyon {
         width:100%;
@@ -699,7 +707,12 @@ figure.effect:hover p {
         padding: 60px 20px;
         min-width: 280px
     }
-
+    figcaption>*{
+        font-size:12px;
+        margin:0px;
+        line-height:1;
+        padding:0;
+    }
     .hidden-phone {
         display: none
     }
@@ -749,7 +762,7 @@ figure.effect:hover p {
 }
 
 @media only screen and (max-width: 1000px) {
-   
+
     .flex {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -759,6 +772,6 @@ figure.effect:hover p {
         opacity: 1;
         left: 0%;
         position: relative;
-  
+
     }
   }
