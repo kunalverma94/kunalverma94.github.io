@@ -1,4 +1,4 @@
-const key = 'v50112441234'
+const key = 'v12'
 // const fl=[
 //     './offline/a.html',
 //     './offline/b.html',
