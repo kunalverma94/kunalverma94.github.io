@@ -1,8 +1,6 @@
 if (navigator.serviceWorker) {
-    console.log(`presemt`);
-    navigator.serviceWorker
+  navigator.serviceWorker
     .register("./worker.js")
-    .then((w)=>console.log('worker then'))
-    .catch((w)=>console.log('error catch'));
-    console.log('...');
+    .then((w) => console.warn("Strong offline policy Service Worker"))
+    .catch((w) => console.error("error catch"));
 }
