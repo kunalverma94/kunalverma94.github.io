@@ -1,4 +1,4 @@
-const key = "v20";
+const key = "v2020";
 const whitelist = ["notes/", "/abc/", "api.reelgood.com/","/notes/"];
 self.addEventListener("install", (e) => {
   // e.waitUntil(caches.open(key).then(g=>
