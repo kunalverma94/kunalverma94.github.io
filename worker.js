@@ -1,5 +1,5 @@
-const key = "v2020-v2";
-const whitelist = ["notes/", "/abc/", "api.reelgood.com/","/notes/","herokuapp"];
+const key = "v2020-v1.1";
+const whitelist = ["notes/", "/abc/", "api.reelgood.com/","/notes/","herokuapp","api.covid19india.org"];
 self.addEventListener("install", (e) => {
   console.log("install");
 });
