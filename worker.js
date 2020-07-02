@@ -1,4 +1,4 @@
-version = "v2020-v1.91";
+version = "v2020-v1.92";
 const whitelist = [
   "notes/",
   "/abc/",
