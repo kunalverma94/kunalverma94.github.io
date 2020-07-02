@@ -1,4 +1,4 @@
-const version = "v2020-v1.9";
+const version = "v2020-v1.91";
 if (navigator.serviceWorker) {
   navigator.serviceWorker
     .register("./worker.js")
