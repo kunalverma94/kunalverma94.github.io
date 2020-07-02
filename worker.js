@@ -1,12 +1,22 @@
-const key = "v2020-v1.1";
-const whitelist = ["notes/", "/abc/", "api.reelgood.com/","/notes/","herokuapp","api.covid19india.org"];
+version = "v2020-v1.8";
+const whitelist = [
+  "notes/",
+  "/abc/",
+  "api.reelgood.com/",
+  "/notes/",
+  "herokuapp",
+  "api.covid19india.org",
+  "worker.js",
+  "sworker.js",
+];
 self.addEventListener("install", (e) => {
-  console.log("install");
+  self.skipWaiting();
 });
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((cl) => {
-      cl.filter((y) => y != key).forEach((h) => caches.delete(h));
+      console.log(cl);
+      cl.filter((y) => y != version).forEach((h) => caches.delete(h));
     })
   );
 });
@@ -14,6 +24,7 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.match(e.request).then((cc) => {
+      console.log(version);
       if (whitelist.find((f) => e.request.url.search(f) > -1)) {
         console.log("whiteListed");
         return fetch(e.request);
@@ -24,7 +35,7 @@ self.addEventListener("fetch", (e) => {
           .then((r) => {
             console.log("fetch caching");
             const rc = r.clone();
-            caches.open(key).then((c) => {
+            caches.open(version).then((c) => {
               if (rc.status == 200) {
                 c.put(e.request, rc);
                 return r;
@@ -47,5 +58,4 @@ self.addEventListener("fetch", (e) => {
       );
     })
   );
-  console.log("activate");
 });
