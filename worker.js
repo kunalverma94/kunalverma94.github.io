@@ -1,9 +1,10 @@
-version = "v2020-v1.92";
+version = "v2020-v1.922";
 const whitelist = [
   "notes/",
   "/abc/",
   "api.reelgood.com/",
   "/notes/",
+  "brodcsta",
   "herokuapp",
   "api.covid19india.org",
   "worker.js",
